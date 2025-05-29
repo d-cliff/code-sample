@@ -1,0 +1,120 @@
+@import '../variables.scss';
+
+.slider-area {
+    background-color: $sand;
+
+    h2 {
+        font-size: clamp(52px, 5vw, 88px);
+        color: $teal;
+        text-align: center;
+    }
+
+    .slider {
+
+        @media (min-width: 1100px) {
+            margin-top: 90px;
+        }
+
+        .slick-list {
+            margin: auto;
+        }
+
+        .slick-track {
+            padding: 5px 0;
+        }
+    
+        .slick-slide {
+            position: relative;
+            background-color: $white;
+            border-radius: 36px;
+            padding: 70px;
+            text-align: center;
+            box-shadow: 0px 0px 5px rgba($black, .25);
+            transition: transform .3s ease-in-out;
+            transform: scale(.8);
+
+            @media (max-width: $small-screen) {
+                padding: 30px;
+            }
+
+            * {
+                opacity: 0;
+
+                @media (max-width: 1100px) {
+                    opacity: 1;
+                }
+            }
+
+            h4 {
+                font-size: clamp(30px, 4vw, 37px);
+                color: $teal;
+            }
+
+            h4, img, h5 {
+                margin-bottom: 10px;
+            }
+
+            img {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    
+        .slick-center {
+            transform: scale(1) !important;
+            
+            z-index: 2;
+
+            * {
+                transition: all .5s ease-in-out;
+                opacity: 1;
+            }
+        }
+    
+        .slick-slide:not(.slick-center) {
+            z-index: 1;
+        }
+
+        .slick-center + .slick-active {
+            transform: translateX(-225px) scale(.8);
+
+            @media (max-width: $xlarge-screen) {
+                transform: translateX(-125px) scale(.8);
+            }
+        }
+        
+        .slick-active:has(+ .slick-center) {
+            transform: translateX(225px) scale(.8);
+
+            @media (max-width: $xlarge-screen) {
+                transform: translateX(125px) scale(.8);
+            }
+        }
+
+        .slick-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 52px;
+            width: 52px;
+            cursor: pointer;
+            z-index: 3;
+
+            &.prev {
+                transform: rotate(180deg) translateY(50%);
+                left: 0;
+            }
+
+            &.next {
+                right: 0;
+            }
+        }
+    }
+}
+
+.content-section.sand + .slider-area {
+    
+    @media (min-width: $large-screen) {
+        padding-top: 130px;
+    }
+}

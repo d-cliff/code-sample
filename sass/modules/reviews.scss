@@ -1,0 +1,45 @@
+@import '../variables.scss';
+
+.reviews {
+    background-color: $sand;
+    text-align: center;
+    padding-bottom: 210px !important;
+
+    @media (min-width: $medium-screen) {
+        padding: 135px 0 210px !important;
+    }
+
+    h5 {
+        margin-bottom: 50px;
+    }
+
+    .reviews-slider {
+
+        .stars {
+            margin: 0 auto 30px;
+        }
+
+        h3 {
+            max-width: 723px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .slick-arrow {
+            position: absolute;
+            bottom: -82px;
+            width: 52px;
+            width: 52px;
+            cursor: pointer;
+
+            &.prev {
+                transform: rotate(180deg);
+                margin-left: -65px;
+            }
+
+            &.next {
+                margin-left: 13px;
+            }
+        }
+    }
+}

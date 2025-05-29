@@ -1,0 +1,57 @@
+@import '../variables.scss';
+
+.faqs {
+    background-color: $sand;
+    text-align: center;
+
+    @media (min-width: $medium-screen) {
+        padding: 115px 0 !important;
+    }
+
+    h2, h5 {
+        color: $teal;
+        margin-bottom: 10px;
+    }
+
+    &-grid {
+        border-top: 1px solid $black;
+        text-align: left;
+        margin-top: 55px;
+    } 
+
+    .faq {
+        border-bottom: 1px solid $black;
+        padding: 36px 0;
+    
+        &-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+
+            h3 {
+                font-size: 22px;
+                font-family: $merel;
+                margin: 0;
+            }
+        }
+    
+        &-answer {
+            display: none;
+            
+            &-text {
+                padding-top: 20px;
+            }
+        }
+    
+        &-arrow {
+            transition: transform 0.3s ease;
+        }
+    
+        &.active {
+            .faq-arrow {
+                transform: rotate(90deg);
+            }
+        }
+    }
+}
